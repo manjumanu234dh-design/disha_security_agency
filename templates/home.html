@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Your safety, our priority</h1>
+  <p>Professional security solutions for homes, businesses, and events.</p>
+  <a href="{{ url_for('contact') }}" class="cta-button">Get a quote</a>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <h3>Guarding services</h3>
+    <p>Vetted, trained guards for 24/7 protection.</p>
+  </div>
+  <div class="card">
+    <h3>Patrol & surveillance</h3>
+    <p>Regular patrols and incident reporting.</p>
+  </div>
+  <div class="card">
+    <h3>CCTV monitoring</h3>
+    <p>Active monitoring and rapid response.</p>
+  </div>
+</section>
+{% endblock %}

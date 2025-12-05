@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %}
+{% block content %}
+<section class="page">
+  <h2>Contact us</h2>
+
+  <div class="contact-details">
+    <p>📍 Chambenahalli, Sarjapur Hobli, Anekal Taluk, Bangalore – 562125</p>
+    <p>📞 +91-9916870156</p>
+    <p>📧 info@dishasecurity.com</p>
+  </div>
+
+  <form method="POST" action="#" class="contact-form">
+    <label>Name</label>
+    <input type="text" name="name" placeholder="Your name">
+
+    <label>Email</label>
+    <input type="email" name="email" placeholder="you@example.com">
+
+    <label>Message</label>
+    <textarea name="message" rows="5" placeholder="Tell us what you need"></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+{% endblock %}

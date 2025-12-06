@@ -1,25 +1,27 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
-# Create the Flask app
 app = Flask(__name__)
 
-# Define routes for each page
 @app.route("/")
 def home():
     return render_template("home.html")
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
+@app.route("/quote", methods=["POST"])
+def quote():
+    name = request.form.get("name", "").strip()
+    email = request.form.get("email", "").strip()
+    service = request.form.get("service", "").strip()
+    message = request.form.get("message", "").strip()
 
-@app.route("/services")
-def services():
-    return render_template("services.html")
+    # Basic server-side validation
+    if not name or not email or not service:
+        return "Please fill in name, email, and service.", 400
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
+    confirmation = (
+        f"Thank you, {name}. Your request for '{service}' was received. "
+        f"We'll contact you at {email}. Details: {message if message else 'N/A'}"
+    )
+    return confirmation, 200
 
-# Run the app
 if __name__ == "__main__":
     app.run(debug=True)

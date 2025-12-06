@@ -1,23 +1,104 @@
-{% extends "base.html" %}
-{% block content %}
-<section class="hero">
-  <h1>Your safety, our priority</h1>
-  <p>Professional security solutions for homes, businesses, and events.</p>
-  <a href="{{ url_for('contact') }}" class="cta-button">Get a quote</a>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disha Security Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="nav">
+        <div class="brand">Disha Security Agency</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#careers">Careers</a>
+            <a href="#contact">Contact</a>
+            <a href="#quote" class="btn small">Request Quote</a>
+        </nav>
+    </header>
 
-<section class="cards">
-  <div class="card">
-    <h3>Guarding services</h3>
-    <p>Vetted, trained guards for 24/7 protection.</p>
-  </div>
-  <div class="card">
-    <h3>Patrol & surveillance</h3>
-    <p>Regular patrols and incident reporting.</p>
-  </div>
-  <div class="card">
-    <h3>CCTV monitoring</h3>
-    <p>Active monitoring and rapid response.</p>
-  </div>
-</section>
-{% endblock %}
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Professional Security. Trusted Protection.</h1>
+        <p>Guarding homes, offices, events, and communities with discipline and integrity.</p>
+        <a href="#quote" class="btn">Request a Quote</a>
+    </section>
+
+    <!-- About -->
+    <section class="card" id="about">
+        <h2>About us</h2>
+        <p>We provide trained security personnel, operational excellence, and modern monitoring solutions. Our commitment is
+           your peace of mind—24/7.</p>
+    </section>
+
+    <!-- Services -->
+    <section class="card" id="services">
+        <h2>Our services</h2>
+        <div class="grid">
+            <div class="item">
+                <h3>Residential security</h3>
+                <p>Gated community and apartment protection, visitor management, and patrols.</p>
+            </div>
+            <div class="item">
+                <h3>Corporate security</h3>
+                <p>Office access control, reception, CCTV oversight, and emergency response.</p>
+            </div>
+            <div class="item">
+                <h3>Event security</h3>
+                <p>Crowd control, VIP protection, and entry screening for public/private events.</p>
+            </div>
+            <div class="item">
+                <h3>24/7 surveillance</h3>
+                <p>Monitoring, incident reporting, and rapid deployment support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers -->
+    <section class="card" id="careers">
+        <h2>Careers</h2>
+        <p>Join our disciplined, growth-driven team. We value integrity, training, and fair opportunities.</p>
+        <ul class="jobs">
+            <li><strong>Security Guard</strong> — Bengaluru</li>
+            <li><strong>Supervisor</strong> — Sarjapur</li>
+           <meta name="description" content="Disha Security Agency provides professional security services in Bengaluru, Sarjapur, and Anekal. Residential, corporate, event security, and 24/7 surveillance.">
+<meta name="keywords" content="Security Agency Bengaluru, Security Services Sarjapur, Event Security Anekal, Residential Security, Corporate Security, Surveillance">
+<meta name="author" content="Disha Security Agency">
+<meta name="robots" content="index, follow"> <li><strong>Operations Manager</strong> — Anekal</li>
+        </ul>
+        <a href="#quote" class="btn">Apply now</a>
+    </section>
+
+    <!-- Quote / Contact -->
+    <section class="card" id="quote">
+        <h2>Request a quote</h2>
+        <form action="/quote" method="POST" class="form">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <select name="service" required>
+                <option value="">Select service</option>
+                <option>Residential security</option>
+                <option>Corporate security</option>
+                <option>Event security</option>
+                <option>24/7 surveillance</option>
+            </select>
+            <textarea name="message" placeholder="Additional details (optional)"></textarea>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+    <!-- Contact -->
+    <section class="card" id="contact">
+        <h2>Contact</h2>
+        <p>Call: +91-9916870156 • Email: contact@disha-security.example</p>
+        <p>Locations served: Anekal • Sarjapur • Bengaluru</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© {{ 2025 }} Disha Security Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>
